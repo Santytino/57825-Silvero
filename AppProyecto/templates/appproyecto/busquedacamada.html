@@ -16,14 +16,38 @@
 <body>
     {% extends "AppProyecto/padre.html" %}
     {% load static %}
-
     {% block contenidoQueCambia %}
-
-<form action="/AppProyecto/buscar" method="GET">
+    <div class="row justify-content-center mt-5">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <h2 class="text-center">Buscar Curso</h2>
+                    <hr>
+                    <form action="/AppProyecto/buscar" method="GET" class="text-center">
+                        <div class="mb-3 text-start">
+                            <label for="camada" class="form-label">Número de Camada</label>
+                            <input type="number" name="camada" id="camada" class="form-control">
+                        </div>
+                        <div class="text-center mt-4">
+                            <input type="submit" value="Buscar" class="btn btn-primary btn-lg">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- <form action="/AppProyecto/buscar" method="GET">
     <input type="number" name="camada" id="camada">
     <input type="submit" value="Buscar">
-    
+</form> -->
     {% endblock %}
-
+    
 </body>
 </html>

@@ -16,10 +16,34 @@
 <body>
     {% extends "AppProyecto/padre.html" %}
     {% load static %}
-
     {% block contenidoQueCambia %}
-<p style="color: white;" >Buscar: {{ camada }}</p>
+    <div class="row justify-content-center mt-5">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <h2 class="text-center">Resultado de la Búsqueda</h2>
+                    <hr>
+                    <p class="text-center text-white">Buscar: {{ camada }}</p>
+                    {% if curso %}
+                        <ul class="list-group">
+                            {% for curso in curso %}
+                                <li class="list-group-item">
+                                    <strong>Curso:</strong> {{ curso.curso }}<br>
+                                    <strong>Camada:</strong> {{ curso.camada }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p class="text-center text-white">No se encontraron resultados.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
 
+<br>
+<br>
+<!-- <p style="color: white;" >Buscar: {{ camada }}</p>
 {% if curso %}
 <ul>
 {% for curso in curso %}
@@ -27,8 +51,7 @@
     <li style="color: white;">{{ curso.camada }}</li>
 {% endfor %}
 </ul>
-{% endif %}
+{% endif %} -->
     {% endblock %}
-
 </body>
 </html>
