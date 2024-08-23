@@ -65,7 +65,6 @@ def resultadobusqueda(request):
 
 def buscar(request):
     if request.GET["camada"]:
-        #respuesta = f"Estoy buscando la camada nro: {request.GET['camada']}"
         camada = request.GET['camada']
         curso = Curso.objects.filter(camada__icontains=camada)
         return render(request, "AppProyecto/resultadobusqueda.html", {"curso": curso, "camada": camada})

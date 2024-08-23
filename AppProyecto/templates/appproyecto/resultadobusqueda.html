@@ -23,7 +23,7 @@
                 <div class="card-body p-4">
                     <h2 class="text-center">Resultado de la Búsqueda</h2>
                     <hr>
-                    <p class="text-center text-white">Buscar: {{ camada }}</p>
+                    <p class="text-center text-black">Buscar: {{ camada }}</p>
                     {% if curso %}
                         <ul class="list-group">
                             {% for curso in curso %}
@@ -34,7 +34,7 @@
                             {% endfor %}
                         </ul>
                     {% else %}
-                        <p class="text-center text-white">No se encontraron resultados.</p>
+                        <p class="text-center text-black">No se encontraron resultados.</p>
                     {% endif %}
                 </div>
             </div>
