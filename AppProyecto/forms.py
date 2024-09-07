@@ -8,6 +8,8 @@ class CursoForm(forms.Form):
 class EstudiantesForm(forms.Form):
     nombre = forms.CharField(max_length=50)
     email = forms.EmailField()
+    foto = forms.ImageField(required=False)
+    descripcion = forms.CharField(widget=forms.Textarea, required=False)
     
 class ProfesoresForm(forms.Form):
     nombre = forms.CharField(max_length=50)

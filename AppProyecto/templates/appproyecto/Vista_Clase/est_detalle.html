@@ -1,0 +1,27 @@
+{% extends "AppProyecto/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+    <div class="container mt-4">
+        <div class="card p-4 mx-auto" style="max-width: 600px;">
+            <div class="text-center">
+                <h1 class="mb-4">Detalles del Estudiante</h1>
+                
+                <!-- Imagen del estudiante centrada y redondeada -->
+                {% if object.foto %}
+                <img src="{{ object.foto.url }}" alt="" class="img-fluid rounded-circle mb-4" style="height: 120px; width: 120px;">
+                {% else %}
+                <img src="{% static 'appproyecto/Generico.png' %}" alt="" class="img-fluid rounded-circle mb-4" style="width: 120px; height: 120px;">
+                {% endif %}
+                
+                <!-- Información del estudiante -->
+                <p class="mb-2"><strong>Nombre:</strong> <i>{{ object.nombreapellidoEst }}</i></p>
+                <p class="mb-4"><strong>Email:</strong> <i>{{ object.email }}</i></p>
+                <p class="mb-4"><strong>Reseña:</strong> <i>{{ object.descripcion }}</i></p>
+
+                <!-- Botón para regresar -->
+                <a href="{% url 'ListEst' %}" class="btn btn-outline-secondary">Regresar</a>
+            </div>
+        </div>
+    </div>
+<br>
+{% endblock %}

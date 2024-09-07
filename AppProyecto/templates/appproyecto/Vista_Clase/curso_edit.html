@@ -1,0 +1,18 @@
+{% extends "AppProyecto/padre.html" %}
+{% block contenidoQueCambia %}
+    <div class="container mt-4">
+        <div class="d-flex justify-content-center">
+            <div class="card p-4" style="max-width: 600px; width: 100%;">
+                <div class="text-center">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            {{ form.as_p }}
+                        </div>
+                        <button type="submit" class="btn btn-outline-secondary mt-2">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

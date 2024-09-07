@@ -1,0 +1,13 @@
+{% extends "AppProyecto/padre.html" %}
+{% block contenidoQueCambia %}
+    <div class="container mt-4">
+        <h1>Formulario</h1>
+        <div class="card p-4">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary mt-2">Enviar</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
