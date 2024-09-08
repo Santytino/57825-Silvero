@@ -5,6 +5,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
+from datetime import datetime
 
 def padre(req):
     return render(req, 'AppProyecto/padre.html')
@@ -64,6 +65,13 @@ class EstudiantesDetailView(LoginRequiredMixin, DetailView):
 class EstudiantesListView(LoginRequiredMixin, ListView):
     model = Estudiantes
     template_name = "AppProyecto/Vista_Clase/est_list.html"
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['fecha_actual'] = datetime.now().date()
+        print("Fecha actual:", context['fecha_actual'])  # Verificación en consola
+        return context
+
 
 class EstudiantesDetailView(LoginRequiredMixin, DetailView):
     model = Estudiantes

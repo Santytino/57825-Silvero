@@ -12,6 +12,8 @@ from django.contrib.auth.decorators import login_required
 def padre(req):
     return render(req, 'appproyecto/padre.html')
 
+def nosotros(req):
+    return render(req, 'appproyecto/nosotros.html')
 @login_required
 def curso(req):
     return render(req, 'appproyecto/curso.html')

@@ -2,25 +2,31 @@
 {% load static %}
 {% block contenidoQueCambia %}
 <div class="container mt-4">
-    <ul class="list-group">
-        {% for estudiante in object_list %}
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center w-100">
-                <!-- Mostrar la foto del estudiante si existe -->
-                {% if estudiante.foto %}
-                <img src="{{ estudiante.foto.url }}" alt="" class="img-thumbnail me-3" style="width: 80px; height: 80px;">
-                {% else %}
-                <img src="{% static 'appproyecto/Generico.png' %}" alt="" class="img-thumbnail me-3" style="width: 80px; height: 80px;">
-                {% endif %}
-                <div class="me-auto">
-                    <p class="mb-1"><strong>Nombre:</strong> {{ estudiante.nombreapellidoEst }}</p>
-                    <p class="mb-1"><strong>Email:</strong> {{ estudiante.email }}</p>
+    <div class="bg-primary text-white p-3 rounded mb-4">
+        <h1 class="mb-0 text-center">Reseña de Estudiantes</h1>
+        <p class="mb-0 text-center">Fecha: {{ fecha_actual }}</p>
+    </div>
+    <div class="bg-light p-4 rounded">
+        <ul class="list-group">
+            {% for estudiante in object_list %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center w-100">
+                    <!-- Mostrar la foto del estudiante si existe -->
+                    {% if estudiante.foto %}
+                    <img src="{{ estudiante.foto.url }}" alt="" class="img-thumbnail me-3" style="width: 80px; height: 80px;">
+                    {% else %}
+                    <img src="{% static 'appproyecto/Generico.png' %}" alt="" class="img-thumbnail me-3" style="width: 80px; height: 80px;">
+                    {% endif %}
+                    <div class="me-auto">
+                        <p class="mb-1"><strong>Nombre:</strong> {{ estudiante.nombreapellidoEst }}</p>
+                        <p class="mb-1"><strong>Email:</strong> {{ estudiante.email }}</p>
+                    </div>
+                    <a href="{% url 'DetailEst' estudiante.id %}" class="btn btn-outline-secondary btn-sm">Ver</a>
                 </div>
-                <a href="{% url 'DetailEst' estudiante.id %}" class="btn btn-outline-secondary btn-sm">Ver</a>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>
 <br>
 {% endblock %}

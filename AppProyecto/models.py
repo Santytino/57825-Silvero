@@ -22,6 +22,7 @@ class Estudiantes(models.Model):
     def get_absolute_url(self):
         return reverse('detalle_est', kwargs={'pk': self.pk})
 
+
 class Profesores(models.Model):
     nombreapellidoProf = models.CharField(max_length=50)
     email = models.EmailField()
