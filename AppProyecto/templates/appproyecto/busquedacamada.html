@@ -23,7 +23,7 @@
                 <div class="card-body p-4">
                     <h2 class="text-center">Buscar Curso</h2>
                     <hr>
-                    <form action="/AppProyecto/buscar" method="GET" class="text-center">
+                    <form action="{% url 'buscar' %}" method="GET" class="text-center">
                         <div class="mb-3 text-start">
                             <label for="camada" class="form-label">Número de Camada</label>
                             <input type="number" name="camada" id="camada" class="form-control">
